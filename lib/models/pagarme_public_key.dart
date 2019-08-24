@@ -1,3 +1,6 @@
+/// This class holds key information needed to
+/// encrypt the query string generated using the
+/// card data.
 
 import 'package:pagarme_flutter_card_hash/utils/json_utils.dart';
 
@@ -9,7 +12,7 @@ class PagarMePublicKey {
 
   PagarMePublicKey({this.id, this.dateCreated, this.ip, this.publicKey});
 
-  static FromJson(Map<String, dynamic> json) {
+  static fromJson(Map<String, dynamic> json) {
 
     if (json == null) {
       return null;

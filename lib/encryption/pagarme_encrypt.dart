@@ -1,3 +1,7 @@
+/// This class is responsible for both building the query string containing
+/// the card info as well as encrypting it with the RSA details contained
+/// within the pagarMePublicKey attribute.
+
 import 'package:encrypt/encrypt.dart';
 import 'package:pagarme_flutter_card_hash/models/pagarme_card.dart';
 import 'package:pagarme_flutter_card_hash/models/pagarme_public_key.dart';

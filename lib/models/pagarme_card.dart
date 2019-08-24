@@ -1,3 +1,7 @@
+/// This class contains the card attributes needed
+/// in order to compose the query string to be
+/// encrypted.
+
 library pagarme_card;
 
 class PagarMeCard {

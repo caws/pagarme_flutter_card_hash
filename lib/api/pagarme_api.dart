@@ -1,3 +1,7 @@
+/// This class sends an HTTP request to Pagar.me's API endpoint that is
+/// responsible for generating the RSA key that is used to encrypt the
+/// card data to be sent to your backend (and Pagar.me's API)
+
 import 'package:dio/dio.dart';
 import 'package:pagarme_flutter_card_hash/constants/pagarme_constants.dart';
 import 'package:pagarme_flutter_card_hash/exceptions/response_exception.dart';
@@ -6,7 +10,7 @@ import 'package:pagarme_flutter_card_hash/utils/http_tunnel.dart';
 
 class PagarMeApi<T> {
   final HttpTunnel httpTunnel = new HttpTunnel();
-  final _baseUrl = PagarMeConstants.CardHashUrl;
+  final _baseUrl = PagarMeConstants.cardHashUrl;
   String pagarMeApiKey;
 
   PagarMeApi({this.pagarMeApiKey});
@@ -16,12 +20,13 @@ class PagarMeApi<T> {
         await httpTunnel.get('$_baseUrl?api_key=$pagarMeApiKey');
 
     if ((response == null) || (response.statusCode != 200)) {
-      throw new ResponseException(cause:
-          "Pagar.me's API didn't respond as expected or there's no internet connection.");
+      throw new ResponseException(
+          cause:
+              "Pagar.me's API didn't respond as expected or there's no internet connection.");
     }
 
     PagarMePublicKey pagarMePublicKey =
-        PagarMePublicKey.FromJson(response.data);
+        PagarMePublicKey.fromJson(response.data);
 
     return pagarMePublicKey;
   }

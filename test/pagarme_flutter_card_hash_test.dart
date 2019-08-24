@@ -1,3 +1,5 @@
+/// A (very) basic test class.
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:pagarme_flutter_card_hash/api/pagarme_api.dart';
 import 'package:pagarme_flutter_card_hash/encryption/pagarme_encrypt.dart';
@@ -5,14 +7,6 @@ import 'package:pagarme_flutter_card_hash/models/pagarme_card.dart';
 import 'package:pagarme_flutter_card_hash/models/pagarme_public_key.dart';
 
 import 'package:pagarme_flutter_card_hash/pagarme_flutter_card_hash.dart';
-
-//test('adds one to input values', () {
-//final calculator = Calculator();
-//expect(calculator.addOne(2), 3);
-//expect(calculator.addOne(-7), -6);
-//expect(calculator.addOne(0), 1);
-//expect(() => calculator.addOne(null), throwsNoSuchMethodError);
-//});
 
 void main() {
   String pagarMeApiKey = "ek_test_yCRumKDVQgqFkjlQojnTSHgWw7UI5g";

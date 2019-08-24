@@ -1,3 +1,7 @@
+/// The main class that uses all the other classes.
+/// Here is where the entire card_hash generation
+/// process is done.
+
 library pagarme_flutter_card_hash;
 
 import 'api/pagarme_api.dart';
