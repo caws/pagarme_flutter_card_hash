@@ -7,22 +7,22 @@ import 'package:pagarme_flutter_card_hash/utils/http_tunnel.dart';
 class PagarMeApi<T> {
   final HttpTunnel httpTunnel = new HttpTunnel();
   final _baseUrl = PagarMeConstants.CardHashUrl;
-  String pagarmeApiKey;
+  String pagarMeApiKey;
 
-  PagarMeApi({this.pagarmeApiKey});
+  PagarMeApi({this.pagarMeApiKey});
 
   Future<PagarMePublicKey> generateEncryptionKeyAndId() async {
     Response response =
-        await httpTunnel.get('$_baseUrl?api_key=$pagarmeApiKey');
+        await httpTunnel.get('$_baseUrl?api_key=$pagarMeApiKey');
 
     if ((response == null) || (response.statusCode != 200)) {
       throw new ResponseException(cause:
           "Pagar.me's API didn't respond as expected or there's no internet connection.");
     }
 
-    PagarMePublicKey pagarmePublicKey =
+    PagarMePublicKey pagarMePublicKey =
         PagarMePublicKey.FromJson(response.data);
 
-    return pagarmePublicKey;
+    return pagarMePublicKey;
   }
 }

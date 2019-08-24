@@ -1,3 +1,8 @@
-## [0.0.1] - TODO: Add release date.
+## 0.0.2
 
-* TODO: Describe initial release.
+* Add PagarMeCard model to clean up the code a bit. Correct typo in a few classes. Add basic tests for basic coverage.
+
+## 0.0.1
+
+* Initial Release
+

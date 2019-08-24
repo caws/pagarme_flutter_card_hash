@@ -1,6 +1,6 @@
 name: pagarme_flutter_card_hash
 description: A Flutter package that allows you to generate card hashes to be used with pagar.me&#x27;s payment platform.
-version: 0.0.1
+version: 0.0.2
 author: Charles Washington
 homepage: https://github.com/caws/pagarme_flutter_card_hash
 

@@ -2,34 +2,23 @@ library pagarme_flutter_card_hash;
 
 import 'api/pagarme_api.dart';
 import 'encryption/pagarme_encrypt.dart';
+import 'models/pagarme_card.dart';
 import 'models/pagarme_public_key.dart';
 
 class PagarMeFlutterCardHash {
-  String pagarmeApiKey;
-  String cardNumber;
-  String cardHolderName;
-  String cardExpirationDate;
-  String cardCvv;
+  String pagarMeApiKey;
+  PagarMeCard pagarMeCard;
 
-  PagarMeFlutterCardHash(
-      {this.pagarmeApiKey,
-      this.cardNumber,
-      this.cardHolderName,
-      this.cardExpirationDate,
-      this.cardCvv});
+  PagarMeFlutterCardHash({this.pagarMeApiKey, this.pagarMeCard});
 
   Future<String> generateCardHash() async {
-    PagarMeApi pagarMeApi = PagarMeApi(pagarmeApiKey: this.pagarmeApiKey);
+    PagarMeApi pagarMeApi = PagarMeApi(pagarMeApiKey: this.pagarMeApiKey);
 
-    PagarMePublicKey pagarmePublicKey =
+    PagarMePublicKey pagarMePublicKey =
         await pagarMeApi.generateEncryptionKeyAndId();
 
     PagarMeEncrypt pagarmeEncrypt = PagarMeEncrypt(
-        pagarmePublicKey: pagarmePublicKey,
-        cardNumber: this.cardNumber,
-        cardHolderName: this.cardHolderName,
-        cardCvv: this.cardCvv,
-        cardExpirationDate: this.cardExpirationDate);
+        pagarMePublicKey: pagarMePublicKey, pagarMeCard: this.pagarMeCard);
 
     return pagarmeEncrypt.generateCardHash();
   }
