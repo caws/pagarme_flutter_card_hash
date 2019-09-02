@@ -1,5 +1,7 @@
 # pagarme_flutter_card_hash
 
+[![Build Status](https://travis-ci.org/caws/pagarme_flutter_card_hash.svg?branch=master)](https://travis-ci.org/caws/pagarme_flutter_card_hash)
+
 A Flutter package that allows you to generate card hashes to be used with [pagar.me](https://pagar.me/)'s payment platform.
 
 ## Is this safe?
