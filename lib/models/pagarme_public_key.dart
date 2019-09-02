@@ -13,7 +13,6 @@ class PagarMePublicKey {
   PagarMePublicKey({this.id, this.dateCreated, this.ip, this.publicKey});
 
   static fromJson(Map<String, dynamic> json) {
-
     if (json == null) {
       return null;
     }
