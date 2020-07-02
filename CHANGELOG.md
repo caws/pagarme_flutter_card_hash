@@ -1,3 +1,7 @@
+## 0.2.0
+
+* Bump Dio and Encrypt versions.
+
 ## 0.1.0
 
 * Add example, bump version to 0.1.0 and format pagarme_public_key.dart file. 
